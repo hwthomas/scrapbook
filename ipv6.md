@@ -54,8 +54,8 @@ When working in the world of IPv6, our addresses can vary depending on our scope
 
 **GLOBAL** - Everything/everywhere (i.e. the whole internet),  
 **UNIQUE LOCAL** - In our LAN (behind the internet gateway),  
-**LINK LOCAL** - In the same domain that will not be routed (ie on the same switch) 
-
+**LINK LOCAL** - In the same domain that will not be routed (ie on the same switch)   
+  
 | Range     | Purpose                            |
 | --------- | ---------------------------------- |
 | ::1/128   | Loopback Address (localhost)       |
@@ -67,10 +67,10 @@ When working in the world of IPv6, our addresses can vary depending on our scope
 You should always use the smallest possible scope for communication.  
 A host can have **multiple** addresses in different scopes, even on the same interface  
 
-## Subnetting
-
-| Network Bits                    | Host Bits                                             |
-|:-------------------------------:|:--------:|:------------------------------------------:|
+## Subnetting  
+  
+| Network Bits | Host Bits | 
+| :----------: | :-------: |
 |       Routing Prefix            | SubnetID |           Interface Identifier             |
 |:----------------------------------------------------------------------------------------|
 |   XXXX   |   XXXX   |   XXXX    |   XXXX   |   XXXX   |   XXXX   |   XXXX    |   XXXX   |
