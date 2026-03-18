@@ -1,6 +1,9 @@
-# IPv6 Cheat Sheet  (see https://github.com/onemarcfifty/cheat... )
+## IPv6 Cheat Sheet ##  
+  
+cloned from https://github.com/onemarcfifty/cheat-sheets/ (with many thanks!) and edited slightly   
+where I've found additional ways to remember things, and also print pages out better.
 
-This cheat sheet goes together with videos that I have made:
+This cheat sheet goes together with videos that Marc has made (which are excellent):
 
 1. [IPv6 from Scratch - Introduction to IPv6](https://youtu.be/oItwDXraK1M)
 2. [IPv6 Explained - SLAAC and DHCPv6 (IPv6 from Scratch Part 2)](https://youtu.be/jlG_nrCOmJc)
@@ -64,12 +67,12 @@ When working in the world of IPv6, our addresses can vary depending on our scope
 You should always use the smallest possible scope for communication.  
 A host can have **multiple** addresses in different scopes, even on the same interface  
 
-## Subnetting
+## Subnetting  
   
-|           Network Bits                     |                 Host Bits                  |  
-|--------------------------------------------|--------------------------------------------|  
-|    Routing Prefix               | SubnetID |           Interface Identifier             |  
-| **XXXX** | **XXXX** | **XXXX**  | **XXXX** | **XXXX** | **XXXX** | **XXXX**  | **XXXX** |  
+| Network Bits                    | Host Bits                                             |  
+| ------------------------------- | -------- | ------------------------------------------ |  
+|       Routing Prefix            | SubnetID |           Interface Identifier             |  
+|   XXXX   |   XXXX   |   XXXX    |   XXXX   |   XXXX   |   XXXX   |   XXXX    |   XXXX   |  
 |                                                                                         |  
 
 As in IPv4, IPv6 includes support for network segmentation via Subnetting. In the image above, 
