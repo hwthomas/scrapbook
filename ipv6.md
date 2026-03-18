@@ -67,13 +67,13 @@ When working in the world of IPv6, our addresses can vary depending on our scope
 You should always use the smallest possible scope for communication.  
 A host can have **multiple** addresses in different scopes, even on the same interface  
 
-## Subnetting  
-  
-| Network Bits                    | Host Bits                                             |  
-| ------------------------------- | -------- | ------------------------------------------ |  
-|       Routing Prefix            | SubnetID |           Interface Identifier             |  
-|   XXXX   |   XXXX   |   XXXX    |   XXXX   |   XXXX   |   XXXX   |   XXXX    |   XXXX   |  
-|                                                                                         |  
+## Subnetting
+
+| Network Bits                    | Host Bits                                             |
+| ------------------------------- | -------- | ------------------------------------------ |
+|       Routing Prefix            | SubnetID |           Interface Identifier             |
+|   XXXX   |   XXXX   |   XXXX    |   XXXX   |   XXXX   |   XXXX   |   XXXX    |   XXXX   |
+|                                                                                         |
 
 As in IPv4, IPv6 includes support for network segmentation via Subnetting. In the image above, 
 the first 64 bits are designated as the `Network` portion, while the last 64 bits are for 
