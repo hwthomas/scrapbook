@@ -70,8 +70,9 @@ A host can have **multiple** addresses in different scopes, even on the same int
 ## Subnetting
 
 | Network Bits                    | Host Bits                                             |
-| ------------------------------- | -------- | ------------------------------------------ |
+|:-------------------------------:|:--------:|:------------------------------------------:|
 |       Routing Prefix            | SubnetID |           Interface Identifier             |
+|:----------------------------------------------------------------------------------------|
 |   XXXX   |   XXXX   |   XXXX    |   XXXX   |   XXXX   |   XXXX   |   XXXX    |   XXXX   |
 |                                                                                         |
 
