@@ -14,9 +14,9 @@ This cheat sheet goes together with videos that Marc has made (which are excelle
  ` <--------------    Network Bits  ---------------> <--------------    Host Bits    ---------------->`  
  ` <----      Routing Prefix     ----> <--Subnet--> | <------------ Interface Identifier  ----------->`  
        
-|   hextet 1   |   hextet 2  |   word 3   |   word 4   |   word 5   |   word 6   |   word 7   |  word 8  |
+|   hextet 1   |   hextet 2  |   hextet 3   |   hextet 4   |   hextet 5   |   hextet 6   |   hextet 7   |  hextet 8  |
 |   :----:   |   :----:  |   :----:   |   :----:   |   :----:   |   :----:   |   :----:   |  :----:  |
-|    **XXXX**     |   **X X X X**   |    XXXX    |    XXXX    |    XXXX    |    XXXX    |    XXXX    |   XXXX   |
+|    **XXXX     |   X X X X**   |    XXXX    |    XXXX    |    XXXX    |    XXXX    |    XXXX    |   XXXX   |
 
     
 ## Address Length and Format
