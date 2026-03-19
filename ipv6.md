@@ -10,14 +10,6 @@ This cheat sheet goes together with videos that Marc has made (which are excelle
 3. [IPv6 with OpenWrt](https://youtu.be/LJPXz8eA3b8)
 
 ## Subnetting  
-   
- ` <--------------    Network Bits  ---------------> <--------------    Host Bits    ---------------->`  
- ` <----      Routing Prefix     ----> <--Subnet--> | <------------ Interface Identifier  ----------->`  
-       
-|   hextet 1   |   hextet 2  |   hextet 3   |   hextet 4   |   hextet 5   |   hextet 6   |   hextet 7   |  hextet 8  |
-|   :----:   |   :----:  |   :----:   |   :----:   |   :----:   |   :----:   |   :----:   |  :----:  |
-|    **X X X X**     |   **X X X X**   |    XXXX    |    XXXX    |    XXXX    |    XXXX    |    XXXX    |   XXXX   |
-
     
 ## Address Length and Format
 
@@ -78,14 +70,14 @@ You should always use the smallest possible scope for communication.
 A host can have **multiple** addresses in different scopes, even on the same interface  
 
 ## Subnetting  
+   
+` <-------------- Network Bits  -------------> <------------    Host Bits    -------------->`  
+` <------  Routing Prefix  ------> <-Subnet-> | <---------- Interface Identifier ---------->`  
+       
+|   Hextet 1   |   Hextet 2  |   Hextet 3   |   Hextet 4   |   Hextet 5   |   Hextet 6   |   Hextet 7   |   Hextet 8   |
+|   :-----:    |   :-----:   |   :----:     |   :-----:    |   :-----:    |   :-----:    |   :-----:    |   :-----:    |
+| **X X X X**  | **X X X X** | **X X X X**  | **X X X X**  | **X X X X**  | **X X X X**  | **X X X X**  | **X X X X**  |
   
-| Network Bits | Host Bits | 
-| :----------: | :-------: |
-|       Routing Prefix            | SubnetID |           Interface Identifier             |
-|:----------------------------------------------------------------------------------------|
-|   XXXX   |   XXXX   |   XXXX    |   XXXX   |   XXXX   |   XXXX   |   XXXX    |   XXXX   |
-|                                                                                         |
-
 As in IPv4, IPv6 includes support for network segmentation via Subnetting. In the image above, 
 the first 64 bits are designated as the `Network` portion, while the last 64 bits are for 
 `Host` identification. Within the network portion, the first 48 bits are the `Routing Prefix`
