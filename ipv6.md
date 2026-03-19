@@ -11,13 +11,13 @@ This cheat sheet goes together with videos that Marc has made (which are excelle
 
 ## Subnetting  
    
- `<---------------    Network Bits---------------> <-------------- Host Bits ---------------->`  
- `<----       Routing Prefix       ----> <--SubnetID--> | <----- Interface Identifier  ------>`  
+ ` <--------------    Network Bits  ---------------> <--------------    Host Bits    ---------------->`  
+ ` <----      Routing Prefix     ----> <--Subnet--> | <------------ Interface Identifier  ----------->`  
        
-|   word 1   |   word 2  |   word 3   |   word 4   |   word 5   |   word 6   |   word 7   |  word  8 |
+|   word 1   |   word 2  |   word 3   |   word 4   |   word 5   |   word 6   |   word 7   |  word 8  |
 |   :----:   |   :----:  |   :----:   |   :----:   |   :----:   |   :----:   |   :----:   |  :----:  |
 |    XXXX     |   XXXX   |    XXXX    |    XXXX    |    XXXX    |    XXXX    |    XXXX    |   XXXX   |
-                                                                                        |
+
     
 ## Address Length and Format
 
