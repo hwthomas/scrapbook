@@ -16,7 +16,7 @@ This cheat sheet goes together with videos that Marc has made (which are excelle
        
 |   hextet 1   |   hextet 2  |   hextet 3   |   hextet 4   |   hextet 5   |   hextet 6   |   hextet 7   |  hextet 8  |
 |   :----:   |   :----:  |   :----:   |   :----:   |   :----:   |   :----:   |   :----:   |  :----:  |
-|    **XXXX     |   X X X X**   |    XXXX    |    XXXX    |    XXXX    |    XXXX    |    XXXX    |   XXXX   |
+|    **X X X X**     |   **X X X X**   |    XXXX    |    XXXX    |    XXXX    |    XXXX    |    XXXX    |   XXXX   |
 
     
 ## Address Length and Format
