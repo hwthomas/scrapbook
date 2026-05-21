@@ -1,26 +1,22 @@
 ## RPiOS "Trixie" issue with CAN and CAN_RAW drivers ##
-A  RPi4b running Bookworm with a Waveshare RS485/CAN HAT installed will not communicate on the CAN-bus with an identical RPi4b running Trixie.  
-In order to simplify the conditions for reproducing the fault, the simple "cansend" and "candump" comand-line programs from "can-utils" have been used, and show the communications working between 2 Bookworm systems, and failing with the Bookworm-to-Trixe setup.  
+A  RPi4b running Bookworm with Waveshare RS485/CAN HAT will not communicate with an identical RPi4b running Trixie.  
+In order to simplify the conditions for reproducing the fault, the simple "cansend" and "candump" comand-line programs   
+from "can-utils" have been used, and show the communications working between 2 Bookworm systems, and failing with the Bookworm-to-Trixie setup.  
 
 ### RPi4b set-up ###  
-Install the Waveshare RS485/CAN HAT, and edit the edit the config.txt file in the boot partition:
+Install the Waveshare RS485/CAN HAT, can and can_raw drivers, and can-utils program on a Bookworm system.  
+(eg see https://www.pragmaticlinux.com/2021/10/can-communication-on-the-raspberry-pi-with-socketcan)  
 
-  ``sudo nano /boot/config.txt  (or possibly /boot/firmware/config.txt)``  
+Use `cansend` to send a single message, which without another partner on the bus will not be ACK'd, and will repeat indefinitely.
 
-Add this line to the file:
-
-  ``dtoverlay=mcp2515-can0,oscillator=12000000,interrupt=25,spimaxfrequency=2000000``   
-  
-  This assumes the manufacturer installed a 12 MHz crystal oscillator on ythe RS485/CAN hat.
-  
-  Enable SPI communication with the help of the raspi-config tool. Open it by running command:
-
-  ``sudo raspi-config``  
-
-Go to section Interface Options → SPI and select Yes to enable the SPI interface, and reboot.    
-run  
 ```
-    sudo modprobe can
-    sudo modprobe can_raw
-````
-To verify that the SocketCAN related kernel modules loaded properly, run:
+cansend 555#55.55.55.55.55.55.55.55     # a regular pattern that can trigger a scope stably
+
+```
+With a bitrate of 500K, this message takes up ~200 uSec on Bookworm   
+  
+With the same setup on Trixie, the message takes ~265 uSec, indicating that the bitrate has not been set correctly.  
+
+For confirmation, using `ip link show 
+
+    
