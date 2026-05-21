@@ -15,13 +15,13 @@ cansend 555#55.55.55.55.55.55.55.55     # a regular pattern that can trigger a s
 ```
 With a bitrate of 500K, this message takes up ~200 uSec on Bookworm   
   
-With the same setup on Trixie, the message takes ~265 uSec, indicating that the bitrate is not correctl.  
+With the same setup on Trixie, the message takes ~265 uSec, indicating that the bitrate is not correct.  
 
 For confirmation, use the command  
 ```
 ip --details link show can0
 ```
-The (edited) reply (on Bookworm) is...  
+The (abbreviated) reply (on Bookworm) is...  
 ```
 can0...
     can state ERROR-ACTIVE restart-ms 0
@@ -37,7 +37,11 @@ can0...
         ...
         clock 8000000 ...
 ```
-The different in clock frequency (the hardware uses the same 12MHz crystal) perhaps indicates a driver problem  
+The different in clock frequency (the hardware uses the same 12MHz crystal) perhaps indicates a driver problem? 
+
+I have registered the issue with Waveshare, who have confirmed my observations, but believe it to be a kernel driver issue, rather than a hardware one.
+
+
 
 
 
