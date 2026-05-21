@@ -15,8 +15,30 @@ cansend 555#55.55.55.55.55.55.55.55     # a regular pattern that can trigger a s
 ```
 With a bitrate of 500K, this message takes up ~200 uSec on Bookworm   
   
-With the same setup on Trixie, the message takes ~265 uSec, indicating that the bitrate has not been set correctly.  
+With the same setup on Trixie, the message takes ~265 uSec, indicating that the bitrate is not correctl.  
 
-For confirmation, using `ip link show 
+For confirmation, use the command  
+```
+ip --details link show can0
+```
+The (edited) reply (on Bookworm) is...  
+```
+can0...
+    can state ERROR-ACTIVE restart-ms 0
+        bitrate 500000 sample-point 0.83
+        ...
+        clock 6000000 ...
+```
+whereas on Trixie it is...
+```
+can0...
+    can state ERROR-ACTIVE restart-ms 0
+        bitrate 500000 sample-point 0.83
+        ...
+        clock 8000000 ...
+```
+The different in clock frequency (the hardware uses the same 12MHz crystal) perhaps indicates a driver problem  
+
+
 
     
