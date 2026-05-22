@@ -15,9 +15,9 @@ Use `cansend` to send a single message, which without another partner on the bus
 cansend 555#55.55.55.55.55.55.55.55     # a very regular pattern that will trigger stably on a scope
 
 ```
-With a bitrate of 500K, this message takes up ~210 uSec on Bookworm   (~ 108 bits @2uSec/bit)
+With a bitrate of 500K, this message takes a total of approx. 200 uSec on Bookworm   (100 bits @ 2uSec/bit)
   
-With the same setup on Trixie, the message takes ~265 uSec, indicating that the bitrate is not correct.  
+With the same setup on Trixie, the message takes approx. 265 uSec, indicating that the bitrate is not correct.  
 
 For confirmation, use the command  
 ```
@@ -39,9 +39,9 @@ can0...
         ...
         clock 8000000 ...
 ```
-The different in displayed clock frequency (the hardware uses a 12MHz crystal) perhaps indicates a driver problem? 
+The different in displayed clock frequency (the hardware uses a 12MHz crystal) indicates a driver configuration problem. 
 
-I have registered the issue with Waveshare, who confirmed my observations, but believe it to be a kernel driver issue, rather than one with their hardware.
+I have registered the issue with Waveshare, who confirmed my observations, but believe it to be a kernel driver issue, rather than with their hardware.
 
 
 
