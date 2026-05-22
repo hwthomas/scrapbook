@@ -1,7 +1,8 @@
 ## RPiOS "Trixie" issue with CAN and CAN_RAW drivers ##
 An  RPi4b running Bookworm with Waveshare RS485/CAN HAT will not communicate with an identical RPi4b running Trixie.  
 In order to simplify the conditions for reproducing the fault, the simple "cansend" and "candump" comand-line programs   
-from "can-utils" have been used, and show the communications working between 2 Bookworm systems, and failing with the Bookworm-to-Trixie setup.  
+from "can-utils" have been used, and show the communications working between 2 Bookworm systems, and failing -   
+(producing garbled messages) with the Bookworm-to-Trixie setup.  
 
 ### RPi4b set-up ###  
 Install the Waveshare RS485/CAN HAT; can and can_raw drivers; and can-utils program on a Bookworm system.  
@@ -17,7 +18,7 @@ cansend 555#55.55.55.55.55.55.55.55     # a very regular pattern that will trigg
 ```
 With a bitrate of 500K, this message takes a total of approx. 200 uSec on Bookworm   (100 bits @ 2uSec/bit)
   
-With the same setup on Trixie, the message takes approx. 265 uSec, indicating that the bitrate is not correct.  
+With the same setup on Trixie, the message takes approx. 268 uSec, indicating that the bitrate is not correct.  
 
 For confirmation, use the command  
 ```
@@ -35,7 +36,7 @@ whereas on Trixie it is...
 ```
 can0...
     can state ERROR-ACTIVE restart-ms 0
-        bitrate 500000 sample-point 0.83
+        bitrate 500000 sample-point 0.875
         ...
         clock 8000000 ...
 ```
