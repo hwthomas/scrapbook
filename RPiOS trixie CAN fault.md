@@ -1,51 +1,9 @@
-## RPiOS "Trixie" issue with CAN and CAN_RAW drivers ##
-An  RPi4b running Bookworm with Waveshare RS485/CAN HAT will not communicate with an identical RPi4b running Trixie.  
-In order to simplify the conditions for reproducing the fault, the simple "cansend" and "candump" comand-line programs   
-from "can-utils" have been used, and show the communications working between 2 Bookworm systems, and failing -   
-(producing garbled messages) with the Bookworm-to-Trixie setup.  
-
-### RPi4b set-up ###  
-Install the Waveshare RS485/CAN HAT; can and can_raw drivers; and can-utils program on a Bookworm system.  
-(eg see https://www.pragmaticlinux.com/2021/10/can-communication-on-the-raspberry-pi-with-socketcan)  
-
-### Reproduce problem ###
-
-Use `cansend` to send a single message, which without another partner on the bus will not be ACK'd, and will repeat indefinitely.
-
-```
-cansend 555#55.55.55.55.55.55.55.55     # a very regular pattern that will trigger stably on a scope
-
-```
-With a bitrate of 500K, this message takes a total of approx. 200 uSec on Bookworm   (100 bits @ 2uSec/bit)
+### Bookworm and Trixie kernel versions ###  
+RPiOS version Bookworm installed on host rpi-pev.local;   Trixie installed on host rpi-evse.local.  
   
-With the same setup on Trixie, the message takes approx. 268 uSec, indicating that the bitrate is not correct.  
-
-For confirmation, use the command  
-```
-ip --details link show can0
-```
-The (abbreviated) reply (on Bookworm) is...  
-```
-can0...
-    can state ERROR-ACTIVE restart-ms 0
-        bitrate 500000 sample-point 0.83
-        ...
-        clock 6000000 ...
-```
-whereas on Trixie it is...
-```
-can0...
-    can state ERROR-ACTIVE restart-ms 0
-        bitrate 500000 sample-point 0.875
-        ...
-        clock 8000000 ...
-```
-The different in displayed clock frequency (the hardware uses a 12MHz crystal) indicates a driver configuration problem. 
-
-I have registered the issue with Waveshare, who confirmed my observations, but believe it to be a kernel driver issue, rather than with their hardware.
+Bookworm:-  
 
 
 
+Trixie:-  
 
-
-    
